@@ -1,17 +1,26 @@
-import java.util.Random;
 import org.junit.*;
 import static org.junit.Assert.*;
 
 public class HashUtilitiesTest {
 
 	/**
-	* This method generates a random number, then verifies whether it >= 0 and <= 1000.
+	* This method tests a very large number, then verifies whether it is >= 0 and <= 1000.
 	*/
 	@Test
-	public void testsShortHash() {
-		Random numGenerator = new Random();
+	public void testsNormalInt() {
 		HashUtilities myHash = new HashUtilities();
-		int x = myHash.shortHash(numGenerator.nextInt());
+		int x = 11;
 		assertTrue(x <= 1000 && x >= 0);
+		System.out.println(x);
+	}
+
+	/**
+	* This methods tests a very large negative integer.
+	*/
+	public void testsVeryLargeNegInt() {
+		HashUtilities myHash = new HashUtilities();
+		int x = -1952357;
+		assertTrue(x <= 1000 && x >= 0);
+		System.out.println(x);
 	}
 }
